@@ -1,0 +1,36 @@
+provider:
+    credentials: xxxx
+    region: us-east-1
+    vendor: aws
+    cluster: xxxx
+train:
+    cpus: 1
+    disk_size: 200
+    gpus: 0
+    instance: t2.xlarge
+    max_nodes: 10
+    datastore_name: null
+    datastore_version: null
+    datastore_mount_dir: null
+    memory: null
+    nodes: 0
+    scale_down_seconds: 1800
+    framework: lightning
+    environment:
+      GRID_URL: "https://grid.ai"
+    actions:
+      on_build_start:
+        - echo "test-4440C67B-40D7-5A93-9BF7-0B4571D8x808403i"
+        - echo "hello world"
+        - echo "did this work?"
+        -  apt-get install libsm6 
+      on_build_end:
+        - echo "test-4440C67B-40D7-5A93-9BF7-0B4571D8x808403i"
+        - echo "hello world"
+        - echo "did this work?"
+      on_experiment_start:
+        - pip3 install lightning-grid --upgrade
+        - echo "ON BEFORE TRAINING"
+        - grid status
+      on_experiment_end:
+        -echo "hello world on exp end"
