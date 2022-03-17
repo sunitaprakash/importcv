@@ -19,18 +19,6 @@ train:
     environment:
       GRID_URL: "https://grid.ai"
     actions:
-      on_build_start:
-        - echo "test-4440C67B-40D7-5A93-9BF7-0B4571D8x808403i"
-        - echo "hello world"
+      on_build_start: 
         - echo "did this work?"
-        -  apt-get install libsm6 
-      on_build_end:
-        - echo "test-4440C67B-40D7-5A93-9BF7-0B4571D8x808403i"
-        - echo "hello world"
-        - echo "did this work?"
-      on_experiment_start:
-        - pip3 install lightning-grid --upgrade
-        - echo "ON BEFORE TRAINING"
-        - grid status
-      on_experiment_end:
-        -echo "hello world on exp end"
+        -  apt-get install libsm6
