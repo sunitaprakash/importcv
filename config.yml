@@ -4,20 +4,6 @@ provider:
     vendor: aws
     cluster: xxxx
 train:
-    cpus: 1
-    disk_size: 200
-    gpus: 0
-    instance: t2.xlarge
-    max_nodes: 10
-    datastore_name: null
-    datastore_version: null
-    datastore_mount_dir: null
-    memory: null
-    nodes: 0
-    scale_down_seconds: 1800
-    framework: lightning
-    environment:
-      GRID_URL: "https://grid.ai"
     actions:
       on_build_start: 
         - echo "did this work?"
