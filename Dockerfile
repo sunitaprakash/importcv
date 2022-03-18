@@ -7,11 +7,8 @@ FROM python:3.9.6-slim
 WORKDIR /gridai/project
 COPY . .
 
-RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6  -y
-
 # any RUN commands you'd like to run
 # use this to install dependencies
-RUN pip install pytorch-lightning && \
-    apt install curl -y \
-    pip install -r requirements.txt && \
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6  -y
+RUN pip install -r requirements.txt 
